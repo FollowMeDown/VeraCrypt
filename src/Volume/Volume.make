@@ -77,10 +77,6 @@ OBJS += ../Crypto/Sha2.o
 OBJS += ../Crypto/Twofish.o
 OBJS += ../Crypto/Whirlpool.o
 OBJS += ../Crypto/Camellia.o
-OBJS += ../Crypto/GostCipher.o
-OBJS += ../Crypto/Streebog.o
-OBJS += ../Crypto/kuznyechik.o
-OBJS += ../Crypto/kuznyechik_simd.o
 
 OBJSNOOPT += ../Crypto/jitterentropy-base.o0
 
@@ -101,7 +97,7 @@ ifeq "$(PLATFORM)" "MacOSX"
 	rm -fr ../Crypto/Aes_x86.o ../Crypto/Aes_x64.o
 ../Crypto/Twofish_asm.oo: ../Crypto/Twofish_x64.S
 	@echo Assembling $(<F)
-	$(AS) $(ASFLAGS64) -p gas -o ../Crypto/Twofish_asm.oo ../Crypto/Twofish_x64.S 
+	$(AS) $(ASFLAGS64) -p gas -o ../Crypto/Twofish_asm.oo ../Crypto/Twofish_x64.S
 ../Crypto/Camellia_asm.oo: ../Crypto/Camellia_x64.S
 	@echo Assembling $(<F)
 	$(AS) $(ASFLAGS64) -p gas -o ../Crypto/Camellia_asm.oo ../Crypto/Camellia_x64.S
